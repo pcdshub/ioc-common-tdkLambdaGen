@@ -1,0 +1,2151 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 279
+y 216
+w 1002
+h 480
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-8.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 4
+textColor index 14
+ctlFgColor1 index 30
+ctlFgColor2 index 32
+ctlBgColor1 index 34
+ctlBgColor2 index 35
+topShadowColor index 37
+botShadowColor index 44
+gridSize 5
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 245
+y 160
+w 479
+h 19
+lineColor index 30
+fill
+fillColor index 30
+lineWidth 0
+visPv "CALC\\\{(C>A)\}($(NAME):SETVOLTS, $(NAME):GETUVL)"
+visInvert
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 247
+y 142
+w 474
+h 14
+lineColor index 30
+fill
+fillColor index 30
+lineWidth 5
+visPv "CALC\\\{(A>B)\}($(NAME):SETVOLTS, $(NAME):GETOVP)"
+visInvert
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 30
+w 599
+h 29
+lineColor index 20
+fill
+fillColor index 20
+lineWidth 0
+visPv "CALC\\\{(A=1)\}($(NAME):CALARM)"
+visInvert
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 785
+y 0
+w 184
+h 89
+lineColor index 33
+fill
+fillColor index 33
+lineWidth 0
+lineStyle "dash"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 600
+y 0
+w 184
+h 89
+lineColor index 34
+fill
+fillColor index 34
+lineWidth 0
+lineStyle "dash"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 730
+y 95
+w 234
+h 109
+lineColor index 56
+fill
+fillColor index 56
+lineWidth 0
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 605
+y 0
+w 174
+h 13
+lineColor index 14
+fill
+fillColor index 14
+lineWidth 0
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 605
+y 0
+w 175
+h 14
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 20
+bgColor index 0
+useDisplayBg
+visPv "CALC\\\{(A=3)\}($(NAME):GETONOFF.SEVR)"
+visInvert
+visMin "0"
+visMax "1"
+value {
+  "Serial Comms Failure"
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 250
+y 205
+w 469
+h 29
+lineColor index 11
+fill
+fillColor index 11
+lineWidth 0
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 727
+y 92
+w 240
+h 140
+lineColor index 61
+fillColor index 61
+lineWidth 5
+visPv "CALC\\\{(A)\}($(NAME):STAT-CC)"
+visInvert
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 2
+y 92
+w 240
+h 140
+lineColor index 61
+fillColor index 61
+lineWidth 5
+visPv "CALC\\\{(A)\}($(NAME):STAT-CV)"
+visInvert
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 5
+y 95
+w 234
+h 109
+lineColor index 56
+fill
+fillColor index 56
+lineWidth 0
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 5
+y 0
+w 600
+h 30
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "GENESYS Programmable Power Supply"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 860
+y 65
+w 105
+h 12
+controlPv "$(NAME):GETIDN"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 33
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 860
+y 20
+w 105
+h 12
+controlPv "$(NAME):GETSN"
+format "string"
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 33
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 860
+y 50
+w 105
+h 12
+controlPv "$(NAME):GETDATE"
+format "string"
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 33
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 860
+y 35
+w 105
+h 12
+controlPv "$(NAME):GETREV"
+format "string"
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 33
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 5
+y 35
+w 170
+h 22
+font "helvetica-medium-r-8.0"
+fgColor index 54
+bgColor index 0
+useDisplayBg
+value {
+  "$(NAME)"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 10
+y 135
+w 120
+h 10
+controlPv "$(NAME):GETVOLTS"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 50
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+updatePvOnDrop
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 250
+y 120
+w 125
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Foldback:"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 455
+y 120
+w 55
+h 20
+controlPv "$(NAME):GETFLD"
+format "string"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 50
+bgColor index 14
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 10
+y 100
+w 230
+h 25
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "DC VOLTS"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 735
+y 130
+w 120
+h 35
+controlPv "$(NAME):GETCUR"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 50
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 150
+y 180
+w 70
+h 10
+controlPv "$(NAME):SETVOLTS"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 870
+y 180
+w 70
+h 10
+controlPv "$(NAME):SETCUR"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 245
+y 35
+w 100
+h 20
+controlPv "$(NAME):FLT-ACF"
+format "string"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 61
+fgAlarm
+bgColor index 14
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 375
+y 95
+w 105
+h 20
+controlPv "$(NAME):FLT-OTP"
+format "string"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 61
+fgAlarm
+bgColor index 14
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 615
+y 120
+w 105
+h 20
+controlPv "$(NAME):FLT-FOLD"
+format "string"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 61
+fgAlarm
+bgColor index 14
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 365
+y 210
+w 170
+h 20
+controlPv "$(NAME):FLT-SO"
+format "string"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 61
+fgAlarm
+bgColor index 14
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 500
+y 35
+w 95
+h 20
+controlPv "$(NAME):FLT-OFF"
+format "string"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 61
+fgAlarm
+bgColor index 14
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 605
+y 20
+w 70
+h 10
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Comms Addr:"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 680
+y 20
+w 95
+h 10
+controlPv "$(NAME):COMADR"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 34
+editable
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 5
+y 210
+w 235
+h 20
+controlPv "$(NAME):STAT-CV"
+format "string"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 14
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 730
+y 210
+w 235
+h 20
+controlPv "$(NAME):STAT-CC"
+format "string"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 14
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 515
+y 180
+w 95
+h 20
+controlPv "$(NAME):STAT-AST"
+format "string"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 14
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 515
+y 120
+w 95
+h 20
+controlPv "$(NAME):STAT-FDE"
+format "string"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 14
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 540
+y 210
+w 175
+h 20
+controlPv "$(NAME):FLT-ENA"
+format "string"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 61
+fgAlarm
+bgColor index 14
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 10
+y 175
+w 90
+h 12
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Maximum Voltage"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 10
+y 190
+w 50
+h 10
+controlPv "$(NAME):GETVOLTS.HOPR"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 56
+editable
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 70
+y 190
+w 30
+h 10
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Volts"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 115
+y 180
+w 35
+h 20
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "SET"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 835
+y 180
+w 35
+h 20
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "SET"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 440
+y 35
+w 55
+h 20
+controlPv "$(NAME):GETONOFF"
+format "string"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 14
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 205
+y 65
+w 35
+h 20
+controlPv "$(NAME):COMGETRMT"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 15
+bgColor index 14
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 250
+y 180
+w 125
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Auto Start:"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 455
+y 180
+w 55
+h 20
+controlPv "$(NAME):GETAST"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 50
+bgColor index 14
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 255
+y 210
+w 105
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 51
+bgColor index 0
+useDisplayBg
+value {
+  "Rear Panel"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 680
+y 35
+w 35
+h 10
+controlPv "$(NAME):COMSPD"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 34
+editable
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 605
+y 35
+w 70
+h 10
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Comms Speed:"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 680
+y 50
+w 95
+h 12
+controlPv "$(NAME):COMDEV"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 34
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 605
+y 50
+w 70
+h 10
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Device Adr:"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 605
+y 0
+w 175
+h 14
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 15
+bgColor index 0
+useDisplayBg
+visPv "CALC\\\{((A=1)&&(B<3))\}($(NAME):COMSTAT, $(NAME):GETONOFF.SEVR)"
+visInvert
+visMin "0"
+visMax "1"
+value {
+  " Serial Comms Enabled"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 720
+y 35
+w 25
+h 10
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Baud"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 735
+y 100
+w 230
+h 25
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "DC Current"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 735
+y 175
+w 90
+h 12
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Maximum Current"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 795
+y 190
+w 30
+h 10
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Amps"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 735
+y 190
+w 50
+h 10
+controlPv "$(NAME):SETCUR.DRVH"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 56
+editable
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 250
+y 65
+w 115
+h 20
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Calculated Power"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 415
+y 65
+w 100
+h 20
+controlPv "$(NAME):CALCPWR"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fgColor index 50
+bgColor index 14
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 520
+y 65
+w 55
+h 20
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Watts"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 605
+y 70
+w 70
+h 10
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Serial Lnk:"
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 790
+y 0
+w 174
+h 14
+lineColor index 14
+fill
+fillColor index 14
+lineWidth 0
+lineStyle "dash"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 785
+y 20
+w 70
+h 12
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Serial No.:"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 785
+y 35
+w 70
+h 12
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "SW Rev.:"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 785
+y 50
+w 70
+h 12
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Test Date:"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 785
+y 65
+w 70
+h 10
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Model Type:"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 790
+y 0
+w 175
+h 14
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 15
+bgColor index 0
+useDisplayBg
+value {
+  "PSU Device Information"
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 147
+y 122
+w 85
+h 55
+lineColor index 30
+fillColor index 30
+lineWidth 5
+visPv "CALC\\\{(A>B|C>A)\}($(NAME):SETVOLTS, $(NAME):GETOVP, $(NAME):GETUVL)"
+visInvert
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 455
+y 140
+w 55
+h 20
+controlPv "$(NAME):GETOVP"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 50
+bgColor index 14
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 250
+y 140
+w 125
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Overvoltage:"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 530
+y 140
+w 60
+h 20
+controlPv "$(NAME):SETOVP"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 50
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 590
+y 140
+w 15
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "V"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 615
+y 140
+w 105
+h 20
+controlPv "$(NAME):FLT-OVP"
+format "string"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 61
+fgAlarm
+bgColor index 14
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 250
+y 160
+w 125
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Undervoltage:"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 455
+y 160
+w 55
+h 20
+controlPv "$(NAME):GETUVL"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 50
+bgColor index 14
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 530
+y 160
+w 60
+h 20
+controlPv "$(NAME):SETUVL"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 50
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 590
+y 160
+w 15
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "V"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 250
+y 95
+w 125
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 13
+bgColor index 0
+useDisplayBg
+value {
+  "Temperature:"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 605
+y 0
+w 175
+h 14
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 20
+bgColor index 0
+useDisplayBg
+visPv "CALC\\\{((A=0)&&(B<3))\}($(NAME):COMSTAT, $(NAME):GETONOFF.SEVR)"
+visInvert
+visMin "0"
+visMax "1"
+value {
+  " Serial Comms Disabled"
+}
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 5
+y 65
+w 100
+h 20
+fgColor index 13
+onColor index 52
+offColor index 52
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(NAME):COMSETRMT"
+pressValue "2"
+onLabel "LOCAL LOCKOUT"
+offLabel "LOCAL LOCKOUT"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 105
+y 65
+w 50
+h 20
+fgColor index 13
+onColor index 52
+offColor index 52
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(NAME):COMSETRMT"
+pressValue "1"
+onLabel "REMOTE"
+offLabel "REMOTE"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 155
+y 65
+w 45
+h 20
+fgColor index 13
+onColor index 52
+offColor index 52
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(NAME):COMSETRMT"
+pressValue "0"
+onLabel "LOCAL"
+offLabel "LOCAL"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 375
+y 120
+w 40
+h 20
+fgColor index 14
+onColor index 52
+offColor index 52
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(NAME):SETFLD"
+pressValue "1"
+onLabel "OFF"
+offLabel "OFF"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 415
+y 120
+w 40
+h 20
+fgColor index 14
+onColor index 52
+offColor index 52
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(NAME):SETFLD"
+pressValue "0"
+onLabel "ON"
+offLabel "ON"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 375
+y 180
+w 40
+h 20
+fgColor index 14
+onColor index 52
+offColor index 52
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(NAME):SETAST"
+pressValue "1"
+onLabel "OFF"
+offLabel "OFF"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 415
+y 180
+w 40
+h 20
+fgColor index 14
+onColor index 52
+offColor index 52
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(NAME):SETAST"
+pressValue "0"
+onLabel "ON"
+offLabel "ON"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 345
+y 35
+w 45
+h 20
+fgColor index 14
+onColor index 52
+offColor index 52
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(NAME):SETONOFF"
+pressValue "1"
+onLabel "OFF"
+offLabel "OFF"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 390
+y 35
+w 45
+h 20
+fgColor index 14
+onColor index 52
+offColor index 52
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(NAME):SETONOFF"
+pressValue "0"
+onLabel "ON"
+offLabel "ON"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 680
+y 65
+w 100
+h 16
+fgColor index 14
+bgColor index 52
+selectColor index 52
+inconsistentColor index 14
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(NAME):COMSTAT"
+font "helvetica-medium-r-10.0"
+orientation "horizontal"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 415
+y 140
+w 40
+h 20
+fgColor index 14
+onColor index 52
+offColor index 52
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(NAME):SETOVM"
+pressValue "1"
+onLabel "MAX"
+offLabel "MAX"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 575
+y 65
+w 20
+h 20
+fgColor index 50
+bgColor index 54
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-10.0"
+buttonLabel "S"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "geneSys_strip.edl"
+}
+menuLabel {
+  0 "Striptool"
+}
+symbols {
+  0 "NAME=$(NAME)"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 20
+y 245
+w 125
+h 12
+controlPv "$(NAME):CALCRES"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 54
+autoHeight
+limitsFromDb
+precision 3
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 280
+w 135
+h 21
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 34
+useDisplayBg
+value {
+  "Load Resistance"
+}
+autoSize
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 190
+y 240
+w 125
+h 25
+fgColor index 14
+onColor index 15
+offColor index 20
+inconsistentColor index 35
+topShadowColor index 37
+botShadowColor index 44
+controlPv "$(NAME):COMRESET"
+onLabel "RESET"
+offLabel "RESET"
+labelType "literal"
+buttonType "push"
+3d
+font "helvetica-medium-r-18.0"
+objType "controls"
+endObjectProperties
+

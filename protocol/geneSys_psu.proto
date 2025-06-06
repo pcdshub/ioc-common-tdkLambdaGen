@@ -1,0 +1,106 @@
+OutTerminator  = CR;
+InTerminator = CR;
+LockTimeout  = 10000;
+ReplyTimeout  = 4000;
+ReadTimeout   = 500;
+WriteTimeout  = 3000;
+ExtraInput    = Ignore;
+
+#
+# $Id: geneSys_psu.proto.db,v 1.1.1.1 2009/06/05 21:49:45 luchini Exp $
+#
+# Genesys DC Power Supply
+# default settings
+# Address: 6
+# Output: Off
+# Baudrate 9600
+# Startup Mode: Safe Start
+# RS232/485: RS485   # NOTE Application is using RS485 MODE
+# OVP: Maximum
+# Vout Setting: 0
+# UVL: 0
+# Iout Setting: Maximum
+# Foldback: Off
+
+
+# Connect a stringout record to this to get
+# a generic command interface.
+# After processing finishes, the record contains the reply.
+debug {
+    ExtraInput = Ignore;
+    out "%s"; in "%39c"}
+
+PSU-set { out "%s";in "%{OK|E01|E02|E03|E04|E05|E06|E07}";}
+#PSU-get { out "%s";in "\r\n%39c";}
+PSU-get {out "%s"; ExtraInput = Ignore; in "%39c"; }
+#
+versionstring {
+    out "*IDN?";
+    in  "%(\$1:Manuf.VAL)[^,],"
+        "%(\$1:Model.VAL)[^,],"
+        "%(\$1:SerialNo.VAL)[^,],"
+        "%(\$1:FWVer.VAL)[^,]";
+}
+
+
+# Initialisation Control Commands
+PSU-comsetadr   { out "ADR %u";  in "OK"; }
+PSU-comclr      { out "ADR \$1"; in "OK"; out "CLR";     in "OK"; }
+PSU-comreset    { out "ADR \$1"; in "OK"; out "RST";     in "OK"; }
+PSU-comgetrmt   { out "ADR \$1"; in "OK"; out "RMT?";    in "%s"; }
+PSU-comsetrmt   { out "ADR \$1"; in "OK"; out "RMT %{LOC|REM|LLO}"; in "OK"; }
+
+# ID Control Commands 
+PSU-getidn      { out "ADR \$1"; in "OK"; out "IDN?";    in "%s"; }
+PSU-getrev      { out "ADR \$1"; in "OK"; out "REV?";    in "%s"; }
+PSU-getsn       { out "ADR \$1"; in "OK"; out "SN?";     in "%s"; }
+PSU-getdate     { out "ADR \$1"; in "OK"; out "DATE?";   in "%s"; }
+PSU-getcc       { out "ADR \$1"; in "OK"; out "IDN?"; in "%s";out "REV?"; in "%\$2:Revision.VAL)s"; out "SN?"; in "%\$2:Serno.VAL)s"; out "DATE?"; in "%\$2:Date.VAL)s"; }
+
+#
+# Output Control Commands
+###PSU-setvolts { out "ADR \$1"; in "OK"; out "PV %f";   in "%\$2:CEMSG.VAL){OK|E01|E02|E03|E04|E05|E06|E07}"; }
+PSU-setvolts    { out "ADR \$1"; in "OK"; out "PV %f";   in "OK"; }
+PSU-getsetvolts { out "ADR \$1"; in "OK"; out "PV?";     in "%f"; }
+PSU-getvolts    { out "ADR \$1"; in "OK"; out "MV?";     in "%f"; }
+PSU-setcur      { out "ADR \$1"; in "OK"; out "PC %f";   in "OK"; }
+PSU-getsetcur   { out "ADR \$1"; in "OK"; out "PC?";     in "%f"; }
+PSU-getcur      { out "ADR \$1"; in "OK"; out "MC?";     in "%f"; }
+
+#PSU-setonoff   { out "ADR \$1"; in "OK"; out "OUT %{ON|OFF}"; in "%{OK|E01|E02|E03|E04|E05|E06|E07}"; }
+PSU-setonoff    { out "ADR \$1"; in "OK"; out "OUT %{ON|OFF}"; in "OK"; }
+PSU-getonoff    { out "ADR \$1"; in "OK"; out "OUT?";    in "%{ON|OFF}"; }
+PSU-setfld      { out "ADR \$1"; in "OK"; out "FLD %{ON|OFF}"; in "OK"; }
+PSU-getfld      { out "ADR \$1"; in "OK"; out "FLD?";    in "%{ON|OFF}"; }
+
+
+#PSU-setovp     { out "ADR \$1"; in "OK"; out "OVP %f";  in "%{OK|E01|E02|E03|E04|E05|E06|E07}"; }
+PSU-setovp      { out "ADR \$1"; in "OK"; out "OVP %f";  in "OK"; }
+PSU-getovp      { out "ADR \$1"; in "OK"; out "OVP?";    in "%f"; }
+PSU-ovp         { out "ADR \$1"; in "OK"; out "OVP %f";  in "OK"; out "OVP?"; in "%\$2:GETOVP.VAL)f"; }
+PSU-setovm      { out "ADR \$1"; in "OK"; out "OVM";     in "%f"; }
+
+#PSU-setuvl     { out "ADR \$1"; in "OK"; out "UVL %f";  in "%{OK|E01|E02|E03|E04|E05|E06|E07}"; }
+PSU-setuvl      { out "ADR \$1"; in "OK"; out "UVL %f";  in "OK"; }
+PSU-getuvl      { out "ADR \$1"; in "OK"; out "UVL?";    in "%f"; }
+PSU-setast      { out "ADR \$1"; in "OK"; out "AST %{ON|OFF}"; in "OK"; }
+PSU-getast      { out "ADR \$1"; in "OK"; out "AST?";    in "%s"; }
+PSU-ast         { out "ADR \$1"; in "OK"; out "AST %{ON|OFF}"; in "OK"; out "AST?"; in "\$2:GETAST.VAL)s"; }
+PSU-saveset     { out "ADR \$1"; in "OK"; out "SAV";     in "%e"; }
+PSU-rclset      { out "ADR \$1"; in "OK"; out "RCL";     in "%e"; }
+PSU-getmode     { out "ADR \$1"; in "OK"; out "MODE?";   in "%s"; }
+PSU-setpsreset  { out "ADR \$1"; in "OK"; out "PV 1.0";  in "OK"; out "PC 3.2";   in "OK"; }
+
+# Status Control Commands
+PSU-getstt      { out "ADR \$1"; in "OK"; out "STT?";    in "%s"; }
+PSU-getflt      { out "ADR \$1"; in "OK"; out "FLT?";    in "%2X"; }
+PSU-setfena     { out "ADR \$1"; in "OK"; out "FENA %2X"; in "OK"; }
+PSU-getfena     { out "ADR \$1"; in "OK"; out "FENA?";   in "%2X"; }
+PSU-getfeve     { out "ADR \$1"; in "OK"; out "FEVE?";   in "%2X"; }
+PSU-getstat     { out "ADR \$1"; in "OK"; out "STAT?";   in "%2X"; }
+PSU-setsena     { out "ADR \$1"; in "OK"; out "SENA %2X"; in "OK"; }
+PSU-getsena     { out "ADR \$1"; in "OK"; out "SENA?";   in "%2X"; }
+PSU-getseve     { out "ADR \$1"; in "OK"; out "SEVE?";   in "%2X"; }
+
+# End of file
+

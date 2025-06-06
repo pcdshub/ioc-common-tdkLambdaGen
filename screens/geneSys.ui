@@ -1,0 +1,2365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1006</width>
+    <height>811</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>${DEV} Main</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="Tittle">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>TDK Lambda ${DEV}</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="PSUDetails">
+     <layout class="QHBoxLayout" name="frame">
+      <item>
+       <widget class="QGroupBox" name="PSUInfo">
+        <property name="font">
+         <font>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="title">
+         <string>PSU Device Information</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="1" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel_6">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:GETREV</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <property name="precision" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:GETREV</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel_7">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:GETSN</string>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:GETSN</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_8">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Model Type:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_25">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>SW Rev.:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Test Date:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel_5">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:GETIDN</string>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:GETIDN</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel_11">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:GETDATE</string>
+             </property>
+             <property name="precision" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:GETDATE</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_28">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Serial No.:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Rem/Loc:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel_37">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:COMGETRMT</string>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:COMGETRMT</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QGridLayout" name="gridLayout_7">
+           <item row="0" column="3">
+            <widget class="PyDMPushButton" name="PyDMPushButton_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>REMOTE</string>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:COMSETRMT</string>
+             </property>
+             <property name="pressValue" stdset="0">
+              <string>1</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="PyDMPushButton" name="PyDMPushButton_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>LOCAL LOCKOUT</string>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:COMSETRMT</string>
+             </property>
+             <property name="pressValue" stdset="0">
+              <string>2</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="PyDMPushButton" name="PyDMPushButton_4">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>LOCAL</string>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:COMSETRMT</string>
+             </property>
+             <property name="pressValue" stdset="0">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_23">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Set Rem/Local:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="SerialComm">
+        <property name="title">
+         <string>Serial Communication</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_24">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Reset Comm.:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_27">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Comms Addr.:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel_8">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:COMADR</string>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:COMADR</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="PyDMEnumButton" name="PyDMEnumButton_4">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>false</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:COMSTAT</string>
+             </property>
+             <property name="orientation" stdset="0">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_4">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Comms Device:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel_12">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:COMDEV</string>
+             </property>
+             <property name="precision" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:COMDEV</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="PyDMPushButton" name="PyDMPushButton_5">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>RESET</string>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:COMRESET</string>
+             </property>
+             <property name="pressValue" stdset="0">
+              <string>1</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_26">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Comms Speed:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_21">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Serial Link:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel_9">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:COMSPD</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <property name="precision" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:COMSPD</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="UISetting">
+     <property name="font">
+      <font>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="title">
+      <string>VOLTAGE AND CURRENT SETTINGS</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QGroupBox" name="DCVoltage">
+        <property name="title">
+         <string>DC VOLTAGE</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <layout class="QGridLayout" name="gridLayout_6">
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_32">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Set Max Voltage Lim.</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="PyDMByteIndicator" name="PyDMByteIndicator_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:STAT-CV</string>
+             </property>
+             <property name="showLabels" stdset="0">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_34">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Constant Voltage mode</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="PyDMLineEdit" name="PyDMLineEdit_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="echoMode">
+              <enum>QLineEdit::Normal</enum>
+             </property>
+             <property name="precision" stdset="0">
+              <number>3</number>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>false</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:SETVOLTS</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_33">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Voltage readback</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_11">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Set Voltage</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="PyDMLabel" name="PyDMLabel_21">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:GETSETVOLTS</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <property name="precision" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:GETSETVOLTS</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_6">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>EXPERT</string>
+             </property>
+             <property name="filenames" stdset="0">
+              <stringlist>
+               <string>expert.ui</string>
+              </stringlist>
+             </property>
+             <property name="macros" stdset="0">
+              <stringlist>
+               <string>DEV=${DEV}</string>
+              </stringlist>
+             </property>
+             <property name="openInNewWindow" stdset="0">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:SETVOLTS.DRVH</string>
+             </property>
+             <property name="precision" stdset="0">
+              <number>3</number>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>false</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:SETVOLTS.DRVH</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel_31">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:GETVOLTS</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <property name="precision" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:GETVOLTS</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="DCCurrent">
+        <property name="title">
+         <string>DC CURRENT</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_6">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Set Current</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_35">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Constant Current mode</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="PyDMLineEdit" name="PyDMLineEdit_4">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:SETCUR</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_31">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Current readback</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_30">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Set Max Current Lim.</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="PyDMByteIndicator" name="PyDMByteIndicator">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:STAT-CC</string>
+             </property>
+             <property name="showLabels" stdset="0">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="PyDMLabel" name="PyDMLabel_29">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:GETSETCUR</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <property name="precision" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:GETSETCUR</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_7">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>EXPERT</string>
+             </property>
+             <property name="filenames" stdset="0">
+              <stringlist>
+               <string>expert.ui</string>
+              </stringlist>
+             </property>
+             <property name="macros" stdset="0">
+              <stringlist>
+               <string>DEV=${DEV}</string>
+              </stringlist>
+             </property>
+             <property name="openInNewWindow" stdset="0">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:SETCUR.DRVH</string>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:SETCUR.DRVH</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel_30">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:GETCUR</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <property name="precision" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:GETCUR</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="OutputStatusControl">
+     <property name="font">
+      <font>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="title">
+      <string>OUTPUT CONTROL AND PS STATUS</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QGroupBox" name="OutControl">
+        <property name="title">
+         <string>OUTPUT CONTROL</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item>
+          <layout class="QGridLayout" name="gridLayout_8">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_38">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>PS ON Ctrl</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="2">
+            <widget class="PyDMLabel" name="PyDMLabel_28">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:GETUVL</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <property name="precision" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:GETUVL</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="2">
+            <widget class="PyDMLabel" name="PyDMLabel_22">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:GETOVP</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <property name="precision" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:GETOVP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_42">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>OverVoltage:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="PyDMEnumButton" name="PyDMEnumButton_9">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>false</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:SETAST</string>
+             </property>
+             <property name="invertOrder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="orientation" stdset="0">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="PyDMLineEdit" name="PyDMLineEdit_5">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:SETOVP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="PyDMLineEdit" name="PyDMLineEdit_6">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:SETUVL</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="label_44">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Auto Start:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel_15">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:CALCRES</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <property name="precision" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:CALCRES</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="label_43">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>UnderVoltage:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel_18">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:CALCPWR</string>
+             </property>
+             <property name="precision" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:CALCPWR</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="PyDMLabel" name="PyDMLabel_24">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:STAT-FDE</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <property name="precision" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:STAT-FDE</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_12">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Calc. Power:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_36">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Calc. Resistance:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="PyDMLabel" name="PyDMLabel_26">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:GETONOFF</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <property name="precision" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:GETONOFF</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="PyDMEnumButton" name="PyDMEnumButton_5">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>false</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:SETONOFF</string>
+             </property>
+             <property name="invertOrder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="orientation" stdset="0">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="PyDMEnumButton" name="PyDMEnumButton_8">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>false</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:SETFLD</string>
+             </property>
+             <property name="invertOrder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="orientation" stdset="0">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="2">
+            <widget class="PyDMLabel" name="PyDMLabel_27">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:STAT-AST</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <property name="precision" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:STAT-AST</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_22">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Foldback:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="OutControl_2">
+        <property name="title">
+         <string>PS STATUS</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <item>
+          <layout class="QGridLayout" name="gridLayout_9">
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_13">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Foldback ShutOFF</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_41">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>ALARM STATUS:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_14">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Overvoltage ShutOFF:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel_16">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:FLT-OTP</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <property name="precision" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:FLT-OTP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel_19">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:FLT-FOLD</string>
+             </property>
+             <property name="precision" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:FLT-FOLD</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="PyDMByteIndicator" name="PyDMByteIndicator_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:CALARM</string>
+             </property>
+             <property name="onColor" stdset="0">
+              <color>
+               <red>255</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </property>
+             <property name="showLabels" stdset="0">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_40">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>AC Fail:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="label_16">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Rear Panel ENABLE:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_39">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>OverTemp ShutOFF:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="label_15">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Rear Panel ShutOFF:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel_23">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:FLT-ACF</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <property name="precision" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:FLT-ACF</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel_20">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:FLT-OVP</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <property name="precision" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:FLT-OVP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel_17">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:FLT-SO</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <property name="precision" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:FLT-SO</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel_25">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>ca://${DEV}:FLT-ENA</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <property name="precision" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="showUnits" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="alarmSensitiveBorder" stdset="0">
+              <bool>true</bool>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://${DEV}:FLT-ENA</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PyDMLabel</class>
+   <extends>QLabel</extends>
+   <header>pydm.widgets.label</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMByteIndicator</class>
+   <extends>QWidget</extends>
+   <header>pydm.widgets.byte</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMEnumButton</class>
+   <extends>QWidget</extends>
+   <header>pydm.widgets.enum_button</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>pydm.widgets.line_edit</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMPushButton</class>
+   <extends>QPushButton</extends>
+   <header>pydm.widgets.pushbutton</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMRelatedDisplayButton</class>
+   <extends>QPushButton</extends>
+   <header>pydm.widgets.related_display_button</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

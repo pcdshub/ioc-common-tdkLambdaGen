@@ -1,0 +1,919 @@
+#
+# TDK-Lambda Genesys db file
+#
+#  NAME
+#  	EPICS prefix
+#  SERIAL
+#  	ASYN PORT_NAME
+#  GENADR
+#   Default device address
+#
+
+# Initialisation Control commands
+record(longout, "$(NAME):COMADR") {
+  field(DESC, "Communication PSU Address")
+  field(DTYP, "Soft Channel")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(HOPR, "32")
+  field(VAL,  "$(GENADR)")
+}
+
+record(longout, "$(NAME):COMSPD") {
+  field(DESC, "Comms Speed (Baudrate)")
+  field(DTYP, "Soft Channel")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(HOPR, "19200")
+  field(LOPR, "9600")
+  field(VAL,  "$(COMSPD)")
+}
+
+record(stringout, "$(NAME):COMDEV") {
+  field(DESC, "Communications Device Name")
+  field(DTYP, "Soft Channel")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(VAL,  "$(COMDEV)")
+}
+
+record(stringout, "$(NAME):DEBUG") {
+  field(DESC, "Debuging help")
+  field(DTYP, "stream")
+  field(SCAN, "Passive")
+  field(OUT,  "@geneSys_psu.proto debug($(GENADR)) $(SERIAL) ")
+}
+
+record(bo, "$(NAME):COMSTAT") {
+  field(DESC, "Serial Link Status")
+  field(DTYP, "Soft Channel")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(ZNAM, "Disable")
+  field(ONAM, "Enable")
+}
+
+record(bo, "$(NAME):COMCLR") {
+  field(DESC, "Clear Status")
+  field(DTYP, "stream")
+  field(OUT,  "@geneSys_psu.proto PSU-comclr($(GENADR)) $(SERIAL) ")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(ZNAM, "Off")
+  field(HIGH, "1")
+  field(ONAM, "Clear")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(bo, "$(NAME):COMRESET") {
+  field(DESC, "Reset")
+  field(DTYP, "stream")
+  field(OUT,  "@geneSys_psu.proto PSU-comreset($(GENADR)) $(SERIAL) ")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(ZNAM, "Off")
+  field(HIGH, "1")
+  field(ONAM, "Reset")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(stringin, "$(NAME):COMGETRMT") {
+  field(DESC, "Get Remote Mode")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-comgetrmt($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(longout, "$(NAME):COMSETRMT") {
+  field(DESC, "Set Remote Mode")
+  field(DTYP, "stream")
+  field(OUT,  "@geneSys_psu.proto PSU-comsetrmt($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(FLNK, "$(NAME):COMGETRMT")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(seq, "$(NAME):REFRESH") {
+  field(DOL1, "1")
+  field(DLY1, "0.1")
+  field(LNK1, "$(NAME):GETVOLTS.PROC")
+  field(DOL2, "1")
+  field(DLY2, "0.1")
+  field(LNK2, "$(NAME):GETCUR.PROC")
+  field(DOL3, "1")
+  field(DLY3, "0.1")
+  field(LNK3, "$(NAME):GETONOFF.PROC")
+  field(DOL4, "1")
+  field(DLY4, "0.1")
+  field(LNK4, "$(NAME):COMGETRMT.PROC")
+  field(DOL5, "1")
+  field(DLY5, "0.1")
+  field(LNK5, "$(NAME):GETAST.PROC")
+  field(DOL6, "1")
+  field(DLY6, "0.1")
+  field(LNK6, "$(NAME):GETFLD.PROC")
+  field(DOL7, "1")
+  field(DLY7, "0.1")
+  field(LNK7, "$(NAME):GETOVP.PROC")
+  field(DOL8, "1")
+  field(DLY8, "0.1")
+  field(LNK8, "$(NAME):GETSETVOLTS.PROC")
+  field(DOL9, "1")
+  field(DLY9, "0.1")
+  field(LNK9, "$(NAME):GETSETCUR.PROC")
+  field(PINI, "NO")
+  field(SCAN, "$(DSCAN) second")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(seq, "$(NAME):REFRESHTEN") {
+  field(DOL1, "1")
+  field(DLY1, "0.2")
+  field(LNK1, "$(NAME):GETIDN.PROC")
+  field(DOL2, "1")
+  field(DLY2, "0.2")
+  field(LNK2, "$(NAME):GETREV.PROC")
+  field(DOL3, "1")
+  field(DLY3, "0.2")
+  field(LNK3, "$(NAME):GETSN.PROC")
+  field(DOL4, "1")
+  field(DLY4, "0.2")
+  field(LNK4, "$(NAME):GETDATE.PROC")
+  field(PINI, "YES")
+  field(SCAN, "$(CSCAN) second")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+# ID Control Commands
+record(stringin, "$(NAME):GETIDN") {
+  field(DESC, "Model Name")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-getidn($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(VAL,  "Unknown")
+}
+
+record(stringin, "$(NAME):GETREV") {
+  field(DESC, "Software Revision")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-getrev($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(VAL,  "Unknown")
+}
+
+record(stringin, "$(NAME):GETSN") {
+  field(DESC, "PSU Serial Number")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-getsn($(GENADR))  $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(VAL,  "Unknown")
+}
+
+record(stringin, "$(NAME):GETDATE") {
+  field(DESC, "Date of last Test")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-getdate($(GENADR))  $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(VAL,  "Unknown")
+}
+
+# Output Control Commands
+#
+# voltage control
+record(ao, "$(NAME):SETVOLTS") {
+  field(DESC, "Set Voltage")
+  field(DTYP, "stream")
+  field(OUT,  "@geneSys_psu.proto PSU-setvolts($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(EGU,  "V")
+  field(DRVH, "$(DRVHV)")
+  field(DRVL, "0")
+  field(HOPR, "$(HOPRV)")
+  field(LOPR, "0")
+  field(PREC, "6")
+  field(FLNK, "$(NAME):GETSETVOLTS")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(ai, "$(NAME):GETSETVOLTS") {
+  field(DESC, "Get Voltage setting")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-getsetvolts($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(PREC, "1")
+  field(EGU,  "V")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(ai, "$(NAME):GETVOLTS") {
+  field(DESC, "Get Voltage")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-getvolts($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(PREC, "1")
+  field(EGU,  "V")
+  field(HOPR, "$(HOPRV)")
+  field(LOPR, "0")
+  field(FLNK, "$(NAME):CALCPWR")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+# current control
+record(ao, "$(NAME):SETCUR") {
+  field(DESC, "Set Current")
+  field(DTYP, "stream")
+  field(OUT,  "@geneSys_psu.proto PSU-setcur($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(DRVH, "$(IPRDRVH)")
+  field(DRVL, "0")
+  field(HOPR, "$(IPRHOPR)")
+  field(LOPR, "0")
+  field(PREC, "$(PREC)")
+  field(EGU,  "A")
+  field(FLNK, "$(NAME):GETSETCUR")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(ai, "$(NAME):GETSETCUR") {
+  field(DESC, "Get Current setting")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-getsetcur($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(PREC, "$(PREC)")
+  field(EGU,  "A")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(ai, "$(NAME):GETCUR") {
+  field(DESC, "Get Current")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-getcur($(GENADR)) $(SERIAL)")
+  field(SCAN, "$(DSCAN) second")
+  field(PINI, "YES")
+  field(HOPR, "$(IPRHOPR)")
+  field(LOPR, "0")
+  field(PREC, "$(PREC)")
+  field(EGU,  "A")
+  field(FLNK, "$(NAME):CALCPWR")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+# calculate the delivered power
+record(calcout, "$(NAME):CALCPWR") {
+  field(DESC, "Calculated Power")
+  field(DTYP, "Soft Channel")
+  field(INPA, "$(NAME):GETCUR")
+  field(INPB, "$(NAME):GETVOLTS")
+  field(SCAN, "Passive")
+  field(CALC, "A*B")
+  field(EGU,  "W")
+  field(HOPR, "1600")
+  field(LOPR, "0")
+  field(PREC, "4")
+  field(FLNK, "$(NAME):CALCRES")
+}
+
+# on/off control
+record(bo, "$(NAME):SETONOFF") {
+  field(DESC, "Set PSU ON")
+  field(DTYP, "stream")
+  field(OUT,  "@geneSys_psu.proto PSU-setonoff($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(ZNAM, "ON")
+  field(ONAM, "OFF")
+  field(FLNK, "$(NAME):GETONOFF")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(bi, "$(NAME):GETONOFF") {
+  field(DESC, "Get PSU Status")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-getonoff($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(ZNAM, "ON")
+  field(ONAM, "OFF")
+  field(OSV,  "MINOR")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+# Foldback control
+record(bo, "$(NAME):SETFLD") {
+  field(DESC, "Set Foldback Control")
+  field(DTYP, "stream")
+  field(OUT,  "@geneSys_psu.proto PSU-setfld($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(ZNAM, "ON")
+  field(ONAM, "OFF")
+  field(FLNK, "$(NAME):GETFLD")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(bi, "$(NAME):GETFLD") {
+  field(DESC, "Get Foldback Status")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-getfld($(GENADR)) $(SERIAL)")
+  field(PINI, "NO")
+  field(ZNAM, "ON")
+  field(ONAM, "OFF")
+  field(ZSV,  "MAJOR")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+# Overvoltage control
+record(ao, "$(NAME):SETOVP") {
+  field(DESC, "Set OverVoltage Protection")
+  field(DTYP, "stream")
+  field(OUT,  "@geneSys_psu.proto PSU-setovp($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(EGU,  "V")
+  field(DRVH, "$(OVPDRVH)")
+  field(DRVL, "$(OVPDRVL)")
+  field(HOPR, "$(OVPDRVH)")
+  field(LOPR, "$(OVPDRVL)")
+  field(PREC, "1")
+  field(FLNK, "$(NAME):GETOVP")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(ai, "$(NAME):GETOVP") {
+  field(DESC, "Get OverVoltage setting")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-getovp($(GENADR)) $(SERIAL)")
+  field(PINI, "NO")
+  field(HOPR, "$(OVPDRVH)")
+  field(LOPR, "$(OVPDRVL)")
+  field(PREC, "1")
+  field(EGU,  "V")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(bo, "$(NAME):SETOVM") {
+  field(DESC, "Set OverVoltage Control")
+  field(DTYP, "stream")
+  field(OUT,  "@geneSys_psu.proto PSU-setovm($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(ZNAM, "RESET")
+  field(ONAM, "MAX")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+# Undervoltage limit
+record(ao, "$(NAME):SETUVL") {
+  field(DESC, "Set UnderVoltage Limit")
+  field(DTYP, "stream")
+  field(OUT,  "@geneSys_psu.proto PSU-setuvl($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(EGU,  "V")
+  field(DRVH, "$(UVLDRVH)")
+  field(DRVL, "$(UVLDRVL)")
+  field(HOPR, "$(UVLDRVH)")
+  field(LOPR, "$(UVLDRVL)")
+  field(PREC, "1")
+  field(FLNK, "$(NAME):GETUVL")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(ai, "$(NAME):GETUVL") {
+  field(DESC, "Get UnderVoltage Limit")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-getuvl($(GENADR)) $(SERIAL)")
+  field(SCAN, "$(CSCAN) second")
+  field(PINI, "NO")
+  field(PREC, "1")
+  field(EGU,  "V")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+# Auto restart on/off control
+record(bo, "$(NAME):SETAST") {
+  field(DESC, "Set Autostart Mode")
+  field(DTYP, "stream")
+  field(OUT,  "@geneSys_psu.proto PSU-setast($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(ZNAM, "ON")
+  field(ONAM, "OFF")
+  field(FLNK, "$(NAME):GETAST")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(bi, "$(NAME):GETAST") {
+  field(DESC, "Get AST Status")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-getast($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+# Mode status
+record(mbbi, "$(NAME):GETMODE") {
+  field(DESC, "Remote mode status")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-getmode($(GENADR)) $(SERIAL)")
+  field(SCAN, "$(DSCAN) second")
+  field(PINI, "NO")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(ZRSV, "NO_ALARM")
+  field(ONSV, "NO_ALARM")
+  field(TWSV, "NO_ALARM")
+  field(THSV, "MAJOR")
+  field(ZRST, "CV")
+  field(ONST, "CC")
+  field(TWST, "OFF")
+  field(THST, "INV")
+  field(NOBT, "2")
+  field(FLNK, "$(NAME):REFRESH")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(mbbo, "$(NAME):PEMSG") {
+  field(DESC, "Programming error msgs")
+  field(DTYP, "Soft Channel")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "5")
+  field(SXVL, "6")
+  field(SVVL, "7")
+  field(ZRST, "No Error")
+  field(ONST, "Prg Vlt > range")
+  field(TWST, "Prg Vlt < UVL")
+  field(THST, "UNIMPLEMENTED")
+  field(FRST, "OVP underrange")
+  field(FVST, "UNIMPLIMENTED")
+  field(SXST, "UVL overrange")
+  field(SVST, "Fault Shutdown")
+  field(ZRSV, "NO_ALARM")
+  field(ONSV, "MINOR")
+  field(TWSV, "MINOR")
+  field(THSV, "MAJOR")
+  field(FRSV, "MINOR")
+  field(FVSV, "MAJOR")
+  field(SXSV, "MINOR")
+  field(SVSV, "MINOR")
+  field(EIST, "8 UNIMPLIMENTED")
+  field(EISV, "MAJOR")
+  field(NIST, "9 UNIMPLIMENTED")
+  field(NISV, "MAJOR")
+  field(TEST, "10UNIMPLIMENTED")
+  field(TESV, "MAJOR")
+  field(ELST, "11UNIMPLIMENTED")
+  field(ELSV, "MAJOR")
+  field(TVST, "12UNIMPLIMENTED")
+  field(TVSV, "MAJOR")
+  field(TTST, "13UNIMPLIMENTED")
+  field(TTSV, "MAJOR")
+  field(FTST, "14UNIMPLIMENTED")
+  field(FTSV, "MAJOR")
+  field(FFST, "15UNIMPLIMENTED")
+  field(FFSV, "MAJOR")
+  field(NOBT, "3")
+}
+
+record(mbbo, "$(NAME):CEMSG") {
+  field(DESC, "Command error msgs")
+  field(DTYP, "Soft Channel")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "5")
+  field(SXVL, "6")
+  field(SVVL, "7")
+  field(ZRST, "No Error")
+  field(ONST, "Illegal cmd")
+  field(TWST, "Missing Param")
+  field(THST, "Illegal Param")
+  field(FRST, "Cksum Error")
+  field(FVST, "Out Of Range")
+  field(SXST, "UNIMPLIMENTED")
+  field(SVST, "UNIMPLIMENTED")
+  field(ZRSV, "NO_ALARM")
+  field(ONSV, "MINOR")
+  field(TWSV, "MINOR")
+  field(THSV, "MINOR")
+  field(FRSV, "MINOR")
+  field(FVSV, "MINOR")
+  field(SXSV, "MAJOR")
+  field(SVSV, "MAJOR")
+  field(EIST, "8 UNIMPLIMENTED")
+  field(EISV, "MAJOR")
+  field(NIST, "9 UNIMPLIMENTED")
+  field(NISV, "MAJOR")
+  field(TEST, "10UNIMPLIMENTED")
+  field(TESV, "MAJOR")
+  field(ELST, "11UNIMPLIMENTED")
+  field(ELSV, "MAJOR")
+  field(TVST, "12UNIMPLIMENTED")
+  field(TVSV, "MAJOR")
+  field(TTST, "13UNIMPLIMENTED")
+  field(TTSV, "MAJOR")
+  field(FTST, "14UNIMPLIMENTED")
+  field(FTSV, "MAJOR")
+  field(FFST, "15UNIMPLIMENTED")
+  field(FFSV, "MAJOR")
+  field(NOBT, "3")
+}
+
+record(stringout, "$(NAME):CMDSET") {
+  field(DESC, "Reset the PSU")
+  field(DTYP, "stream")
+  field(OUT,  "@geneSys_psu.proto PSU-set($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(stringin, "$(NAME):CMDGET") {
+  field(DESC, "Reset the PSU")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-get($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+# Status Control Commands
+record(stringin, "$(NAME):GETSTT") {
+  field(DESC, "PSU Status")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-getstt($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+# conditional registers
+#
+#   Fault Condition Register
+record(mbbiDirect, "$(NAME):FCR") {
+  field(DESC, "read fault condition reg")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-getflt($(GENADR)) $(SERIAL)")
+  field(SCAN, "$(DSCAN) second")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+#record(bi,"$(NAME):FLT-SPARE") {
+# field(DESC, "Spare Bit")
+# field(DTYP, "Soft Channel")
+# field(INP,  "$(NAME):FCR.B0")
+# field(ZNAM, "Spare 0")
+# field(ONAM, "Spare 1")
+# field(SCAN, "$(CSCAN) second")
+#}
+
+record(bi, "$(NAME):FLT-ACF") {
+  field(DESC, "AC Fail has occurred")
+  field(DTYP, "Soft Channel")
+  field(INP,  "$(NAME):FCR.B1")
+  field(ZNAM, "AC OK")
+  field(ONAM, "AC Fail")
+  field(OSV,  "MAJOR")
+  field(SCAN, "$(DSCAN) second")
+}
+
+record(bi, "$(NAME):FLT-OTP") {
+  field(DESC, "Over Temperature Shutdown")
+  field(DTYP, "Soft Channel")
+  field(INP,  "$(NAME):FCR.B2")
+  field(ZNAM, "OTP OK")
+  field(ONAM, "OTP Alarm")
+  field(OSV,  "MAJOR")
+  field(SCAN, "$(DSCAN) second")
+}
+
+record(bi, "$(NAME):FLT-FOLD") {
+  field(DESC, "Foldback Shutdown")
+  field(DTYP, "Soft Channel")
+  field(INP,  "$(NAME):FCR.B3")
+  field(ZNAM, "FOLD OK")
+  field(ONAM, "FOLD Alarm")
+  field(OSV,  "MINOR")
+  field(SCAN, "$(DSCAN) second")
+}
+
+record(bi, "$(NAME):FLT-OVP") {
+  field(DESC, "Over Voltage Shutdown")
+  field(DTYP, "Soft Channel")
+  field(INP,  "$(NAME):FCR.B4")
+  field(ZNAM, "OVP OK")
+  field(ONAM, "OVP Alarm")
+  field(OSV,  "MINOR")
+  field(SCAN, "$(DSCAN) second")
+}
+
+record(bi, "$(NAME):FLT-SO") {
+  field(DESC, "Rear Panel Shutoff")
+  field(DTYP, "Soft Channel")
+  field(INP,  "$(NAME):FCR.B5")
+  field(ZNAM, "Shut-Off OK")
+  field(ONAM, "Shut-Off Alarm")
+  field(OSV,  "MINOR")
+  field(SCAN, "$(DSCAN) second")
+}
+
+record(bi, "$(NAME):FLT-OFF") {
+  field(DESC, "Front Panel OUT button")
+  field(DTYP, "Soft Channel")
+  field(INP,  "$(NAME):FCR.B6")
+  field(ZNAM, "FP OUT ON")
+  field(ONAM, "FP OUT OFF")
+  field(OSV,  "MINOR")
+  field(SCAN, "$(DSCAN) second")
+}
+
+record(bi, "$(NAME):FLT-ENA") {
+  field(DESC, "Rear Panel Enable")
+  field(DTYP, "Soft Channel")
+  field(INP,  "$(NAME):FCR.B7")
+  field(ZNAM, "ENABLE OK")
+  field(ONAM, "ENABLE Open Alarm")
+  field(OSV,  "MINOR")
+  field(SCAN, "$(DSCAN) second")
+}
+
+record(stringout, "$(NAME):SETFENA") {
+  field(DESC, "Set Fault Enable Reg")
+  field(DTYP, "stream")
+  field(OUT,  "@geneSys_psu.proto PSU-setfena($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(FLNK, "$(NAME):GETFENA")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(stringin, "$(NAME):GETFENA") {
+  field(DESC, "Read Fault Enable Reg")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-getfena($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(stringin, "$(NAME):GETFEVE") {
+  field(DESC, "Read Fault Event Reg")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-getfeve($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(stringout, "$(NAME):SETSENA") {
+  field(DESC, "Set Status Enable Reg")
+  field(DTYP, "stream")
+  field(OUT,  "@geneSys_psu.proto PSU-setsena($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(FLNK, "$(NAME):GETSENA")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(stringin, "$(NAME):GETSENA") {
+  field(DESC, "Read Status Enable Reg")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-getsena($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(stringin, "$(NAME):GETSEVE") {
+  field(DESC, "Read Status Event Reg")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-getseve($(GENADR)) $(SERIAL)")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(calcout, "$(NAME):CALARM") {
+  field(DESC, "Combined alarms")
+  field(DTYP, "Soft Channel")
+  field(INPA, "$(NAME):COMSTAT")
+  field(INPB, "$(NAME):GETONOFF.SEVR")
+  field(INPC, "$(NAME):FLT-ACF")
+  field(INPD, "$(NAME):FLT-OTP")
+  field(INPE, "$(NAME):FLT-SO")
+  field(INPF, "$(NAME):FLT-ENA")
+  field(CALC, "A=0|B=3|C=1|D=1|E=1|F=1")
+  field(SCAN, "$(DSCAN) second")
+}
+
+#
+#   Status Condition Register
+#
+record(mbbiDirect, "$(NAME):SCR") {
+  field(DESC, "read status condition reg")
+  field(DTYP, "stream")
+  field(INP,  "@geneSys_psu.proto PSU-getstat($(GENADR)) $(SERIAL)")
+  field(SCAN, "$(DSCAN) second")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(bi, "$(NAME):STAT-CV") {
+  field(DESC, "Constant Voltage Mode")
+  field(DTYP, "Soft Channel")
+  field(INP,  "$(NAME):SCR.B0")
+  field(ZNAM, "NOT CV")
+  field(ONAM, "Constant Voltage")
+  field(SCAN, "$(DSCAN) second")
+}
+
+record(bi, "$(NAME):STAT-CC") {
+  field(DESC, "Constant Current Mode")
+  field(DTYP, "Soft Channel")
+  field(INP,  "$(NAME):SCR.B1")
+  field(ZNAM, "NOT CC")
+  field(ONAM, "Constant Current")
+  field(SCAN, "$(DSCAN) second")
+}
+
+record(bi, "$(NAME):STAT-NFLT") {
+  field(DESC, "No Fault")
+  field(DTYP, "Soft Channel")
+  field(INP,  "$(NAME):SCR.B2")
+  field(ZNAM, "Fault Active")
+  field(ONAM, "Normal")
+  field(ZSV,  "MAJOR")
+  field(OSV,  "NO_ALARM")
+  field(SCAN, "$(DSCAN) second")
+}
+
+record(bi, "$(NAME):STAT-FLT") {
+  field(DESC, "Fault Active")
+  field(DTYP, "Soft Channel")
+  field(INP,  "$(NAME):SCR.B3")
+  field(ZNAM, "NO Fault")
+  field(ONAM, "Fault")
+  field(ZSV,  "NO_ALARM")
+  field(OSV,  "MAJOR")
+  field(SCAN, "$(DSCAN) second")
+}
+
+record(bi, "$(NAME):STAT-AST") {
+  field(DESC, "Auto Restart Enabled")
+  field(DTYP, "Soft Channel")
+  field(INP,  "$(NAME):SCR.B4")
+  field(ZNAM, "Safe Start")
+  field(ONAM, "Auto Restart")
+  field(SCAN, "$(DSCAN) second")
+}
+
+record(bi, "$(NAME):STAT-FDE") {
+  field(DESC, "Foldback Protection")
+  field(DTYP, "Soft Channel")
+  field(INP,  "$(NAME):SCR.B5")
+  field(ZNAM, "Fb Disabled")
+  field(ONAM, "Fb Enabled")
+  field(SCAN, "$(DSCAN) second")
+}
+
+#record(bi,"$(NAME):STAT-SPARE") {
+# field(DESC, "Spare")
+# field(DTYP, "Soft Channel")
+# field(INP,  "$(NAME):SCR.B6")
+# field(ZNAM, "Zero")
+# field(ONAM, "One")
+# field(ZSV,  "MAJOR")
+# field(OSV,  "MAJOR")
+# field(SCAN, "$(DSCAN) second")
+#}
+
+record(bi, "$(NAME):STAT-LCL") {
+  field(DESC, "Local - Remote status")
+  field(DTYP, "Soft Channel")
+  field(INP,  "$(NAME):SCR.B7")
+  field(ZNAM, "REM or LL")
+  field(ONAM, "Local Mode")
+  field(SCAN, "$(DSCAN) second")
+}
+
+record(calcout, "$(NAME):CALCRES") {
+  field(DESC, "calc load resistance")
+  field(SCAN, "$(DSCAN) second")
+  field(INPA, "$(NAME):GETCUR")
+  field(INPB, "$(NAME):GETVOLTS")
+  field(EGU,  "Ohms")
+  field(PREC, "3")
+  field(HOPR, "10000000")
+  field(LOPR, "0")
+  field(DTYP, "Soft Channel")
+  field(CALC, "A=0?-1:B/A")
+  field(FLNK, "$(NAME):DIFFCUR")
+}
+
+record(bo, "$(NAME):SETPSRESET") {
+  field(DESC, "PS Reset")
+  field(DTYP, "stream")
+  field(OUT,  "@geneSys_psu.proto PSU-setpsreset($(GENADR)) $(SERIAL) ")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(ZNAM, "Off")
+  field(HIGH, "1")
+  field(ONAM, "Reset")
+  field(DISV, "0")
+  field(SDIS, "$(NAME):COMSTAT")
+}
+
+record(calcout, "$(NAME):DIFFCUR") {
+  field(DESC, "Act - Des current diff")
+  field(SCAN, "Passive")
+  field(DTYP, "Soft Channel")
+  field(FLNK, "$(NAME):DIFFVOLTS")
+  field(CALC, "B-A")
+  field(INPA, "$(NAME):SETCUR")
+  field(INPB, "$(NAME):GETCUR")
+  field(EGU,  "A")
+  field(PREC, "2")
+}
+
+record(calcout, "$(NAME):DIFFVOLTS") {
+  field(DESC, "Act - Des voltage diff")
+  field(SCAN, "Passive")
+  field(DTYP, "Soft Channel")
+  field(CALC, "B-A")
+  field(INPA, "$(NAME):SETVOLTS")
+  field(INPB, "$(NAME):GETVOLTS")
+  field(EGU,  "V")
+  field(PREC, "2")
+  field(FLNK, "$(NAME):DIFF")
+}
+
+record(calcout, "$(NAME):DIFF") {
+  field(DESC, "Tolerance")
+  field(SCAN, "Passive")
+  field(DTYP, "Soft Channel")
+  field(CALC, "A/B")
+  field(INPA, "$(NAME):DIFFCUR")
+  field(INPB, "$(NAME):GETCUR.HOPR")
+  field(PREC, "6")
+}

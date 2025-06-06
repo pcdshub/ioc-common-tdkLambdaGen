@@ -1,0 +1,18 @@
+Template variables:
+
+RELEASE  - The directory of the parent IOC.
+ARCH     - Defines the target hardware architecture of the IOC build.
+ENGINEER - The engineer responsible for this IOC.
+LOCATION - The location of this IOC.
+IOC_PV   - Base PV name for this IOC. 
+
+Template instances:
+
+GENESYS:
+    BASE          - The base PV name.
+    PORT          - The terminal server:port where TDK-Lambda device connected.
+    ASYNTRACE     - This should be set to turn on asyn tracing.
+    DATASCAN      - The rate at which the IOC scans data fields such as current voltage. Default is every 1 second.
+    CONFSCAN      - The rate at which the IOC scans configuration fields. Default is every 10 seconds.
+    ADR=6         - Default address of TDK-Lambda device
+    COMSPD=9600   - Default comunication speed, doesn't do anything with this value.

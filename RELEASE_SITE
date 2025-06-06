@@ -1,0 +1,8 @@
+# =============================================================
+# Define the top of the EPICS tree for your site.
+# We will build some tools/scripts that allow us to
+# change this easily when relocating software.
+# ==============================================================
+BASE_MODULE_VERSION = R7.0.3.1-2.0
+EPICS_SITE_TOP      = /cds/group/pcds/epics
+EPICS_MODULES       = $(EPICS_SITE_TOP)/$(BASE_MODULE_VERSION)/modules

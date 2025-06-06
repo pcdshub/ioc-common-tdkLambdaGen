@@ -1,0 +1,247 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 146
+y 20
+w 500
+h 600
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-8.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 4
+textColor index 14
+ctlFgColor1 index 30
+ctlFgColor2 index 32
+ctlBgColor1 index 34
+ctlBgColor2 index 35
+topShadowColor index 37
+botShadowColor index 44
+snapToGrid
+gridSize 5
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 560
+w 479
+h 34
+lineColor index 14
+fill
+fillColor index 14
+lineWidth 0
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 6
+y 7
+w 490
+h 24
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 54
+bgColor index 0
+useDisplayBg
+value {
+  "$(NAME)"
+}
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 10
+y 40
+w 480
+h 510
+# Appearance
+border
+plotAreaBorder
+graphTitle "PSU"
+fgColor index 50
+bgColor index 14
+gridColor index 50
+font "helvetica-medium-r-18.0"
+# Operating Modes
+plotMode "plotLastNPts"
+nPts 200
+# X axis properties
+xAxisSrc "AutoScale"
+xMax 1
+xLablePrecision 1
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 3
+yPv {
+  0 "$(NAME):GETVOLTS"
+  1 "$(NAME):GETCUR"
+  2 "$(NAME):CALCPWR"
+}
+plotUpdateMode {
+  0 "y"
+  1 "y"
+  2 "y"
+}
+opMode {
+  0 "plot"
+  1 "plot"
+  2 "plot"
+}
+plotColor {
+  0 index 41
+  1 index 30
+  2 index 44
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 15
+y 570
+w 65
+h 18
+font "helvetica-medium-r-8.0"
+fgColor index 40
+bgColor index 0
+useDisplayBg
+value {
+  "Voltage:"
+}
+endObjectProperties
+
+# (Text)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 85
+y 570
+w 55
+h 20
+controlPv "$(NAME):GETVOLTS"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fgColor index 50
+bgColor index 14
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 165
+y 570
+w 65
+h 18
+font "helvetica-medium-r-8.0"
+fgColor index 31
+bgColor index 0
+useDisplayBg
+value {
+  "Current:"
+}
+endObjectProperties
+
+# (Text)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 235
+y 570
+w 55
+h 20
+controlPv "$(NAME):GETCUR"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fgColor index 50
+bgColor index 14
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 325
+y 570
+w 35
+h 18
+font "helvetica-medium-r-8.0"
+fgColor index 56
+bgColor index 0
+useDisplayBg
+value {
+  "PWR:"
+}
+endObjectProperties
+
+# (Text)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 365
+y 570
+w 100
+h 20
+controlPv "$(NAME):CALCPWR"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fgColor index 50
+bgColor index 14
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+

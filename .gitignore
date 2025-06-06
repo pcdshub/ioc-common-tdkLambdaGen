@@ -1,32 +1,35 @@
-# Prerequisites
-*.d
+# Built file ignores
+O.*
+archive
+autosave
+bin
+build
+db
+dbd
+envPaths
+html
+include
+lib
+*.log
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# Terminal editor ignores
+ *.swp
+ *~
 
-# Precompiled Headers
-*.gch
-*.pch
+# IDE ignores
+*.vscode
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+# Core dumps
+core.*
 
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+# From original afs gitignore
+# EPICS generated folders
+children/build
+# EPICS object files
+**/O.*
+# Generated files
+**envPaths
+# Python temp files
+__pycache__
+# Dev files
+run.sh

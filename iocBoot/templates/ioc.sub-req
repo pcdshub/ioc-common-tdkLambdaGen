@@ -1,0 +1,8 @@
+# TDK-Lambda Genesys IOC instance autosave file
+
+$$LOOP(GENESYS)
+file geneSys.req
+{
+	{ IOC = "$$IOC_PV", BASE="$$BASE" }
+}
+$$ENDLOOP(GENESYS)
